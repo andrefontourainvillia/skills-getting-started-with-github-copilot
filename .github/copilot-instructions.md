@@ -5,6 +5,7 @@
 - Keep frontend behavior in `src/static/app.js` and UI assets in `src/static/`.
 - Favor small, focused functions and straightforward request/response handling.
 - When adding tests, prefer `pytest` and structure tests using AAA (Arrange-Act-Assert).
+- Keep backend tests in the separate `tests/` directory and use explicit `# Arrange`, `# Act`, `# Assert` markers in each test.
 
 ## Architecture
 - The app is a single FastAPI service in `src/app.py`.
@@ -17,6 +18,7 @@
 - Run locally (preferred): `uvicorn src.app:app --reload --reload-include src/static/*`
 - Alternative debug/run path is defined in `.vscode/launch.json` (`Launch Mergington WebApp`).
 - Run tests: `pytest`
+- Before finalizing changes that affect backend behavior, ensure `pytest` is fully green.
 
 ## Environment
 - This dev container includes an up-to-date version of Git available on `PATH`.
